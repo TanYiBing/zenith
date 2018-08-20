@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./newAlbum.css">
+    <script src="最终版/jquery-1.9.1.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <div class="topCard">
+        <span class="selected">产品</span>
+        <span>总册</span>
+        <span>其他</span>
+    </div>
+</header>
+<section>
+    <div class="albumCard">
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+    </div>
+    <div class="albumCard">
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+    </div>
+    <div class="albumCard">
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+    </div>
+    <div class="albumCard">
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+    </div>
+    <div class="albumCard">
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+    </div>
+    <div class="albumCard">
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+    </div>
+    <div class="albumCard">
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+    </div>
+    <div class="albumCard lastCard">
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+        <div class="album"><img src="./images/产品/C6X.jpg" alt=""></div>
+
+    </div>
+</section>
+
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script src="最终版/newAblum.js"></script>
+</body>
+</html>

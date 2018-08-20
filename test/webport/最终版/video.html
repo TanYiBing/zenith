@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="webport.css">
+    <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+    <link href="./vide7.1.0/css/video-js.min.css" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        <div class="topCard">
+            <div class="search"><i class="iconfont">&#xe60b;</i></div>
+            <div class="logo"><img src="./移动端/zenith-logo.jpg" alt=""></div>
+            <div class="menu"><i class="iconfont">&#xe653;</i></div>
+        </div>
+        <div class="daohang">
+            <div class="LocationName">XXX</div>
+        </div>
+    </header>
+    <section>
+        <div class="bigMask">
+            <video id="my-video" class="video-js vjs-big-play-centered" controls style="width: 100%;height: 3.6rem;"
+                   data-setup="{}" autoplay>
+                <source src="//vjs.zencdn.net/v/oceans.mp4" type='video/mp4' id="videoMP4">
+                <source src="//vjs.zencdn.net/v/oceans.webm" type='video/webm' id="videoWEBM">
+            </video>
+            <div class="vedioDesc">
+                <span class="LW">&nbsp;&nbsp;&nbsp;&nbsp;ZENIT AD</span><span class="RW">share&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+        <div class="cut"></div>
+        <div class="vedioList">
+            <div class="RTY">Recommend To You</div>
+            <div class="vedioRow">
+                <a href="" class="vedioCard">
+                    <img src="./移动端/01公司宣传/01K系列移动站主题宣传片.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">ZENIT AD</div>
+                </a>
+                <a href="" class="vedioCard">
+                    <img src="./移动端/01公司宣传/02MG动画-集团公司介绍.jpg" class="ved">
+                    <div class="deti">ZENIT AD</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="" class="vedioCard">
+                    <img src="./移动端/01公司宣传/03MG动画-磨粉产品介绍.jpg" class="ved">
+                    <div class="deti">ZENIT AD</div>
+                </a>
+                <a href="" class="vedioCard">
+                    <img src="./移动端/01公司宣传/04MG动画-破碎产品介绍.jpg" class="ved">
+                    <div class="deti">ZENIT AD</div>
+                </a>
+            </div>
+            <div class="more">
+                <button>MORE</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="copyright">Shanghai Zenit Company @2000-2017 Copyrights</div>
+    </footer>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="jquery-1.9.1.js"></script>
+    <script src="./vide7.1.0/js/video.min.js"></script>
+    <script src="http://vjs.zencdn.net/5.19/lang/zh-CN.js"></script>
+    <script src="./vedio.js"></script>
+</body>
+</html>
