@@ -7,7 +7,9 @@ $(document).ready(function(){
     const hardwareStrength = $('.hardwareStrength');
     const industryConference = $('.industryConference');
     const productTopic = $('.productTopic');
-    const customerSite = $('.customerSite');
+    const industrialMill = $('.customerSite');
+    const buildingBroke = $('.customerSite');
+    const metalMine = $('.customerSite');
 
     function iconChange() {
         $('.conLeft li img:nth-child(2)').css('display','none');
@@ -36,7 +38,9 @@ $(document).ready(function(){
         hardwareStrength.css('display','none');
         industryConference.css('display','none');
         productTopic.css('display','none');
-        customerSite.css('display','none');
+        industrialMill.css('display','none');
+        buildingBroke.css('display','none');
+        metalMine.css('display','none');
         let targetClass = '.'+id;
         $(targetClass).css('display','block');
         changeConLeftHeight();

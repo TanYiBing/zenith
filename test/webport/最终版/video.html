@@ -3,22 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <link rel="stylesheet" href="webport.css">
+    <link rel="stylesheet" href="./style/webport.css">
+    <link rel="stylesheet" href="./style/jquery-weui.min.css">
+    <link rel="stylesheet" href="./style/weui.min.css">
     <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
     <link href="./vide7.1.0/css/video-js.min.css" rel="stylesheet">
     <title>Title</title>
 </head>
-<body>
-    <header>
-        <div class="topCard">
-            <div class="search"><i class="iconfont">&#xe60b;</i></div>
-            <div class="logo"><img src="./移动端/zenith-logo.jpg" alt=""></div>
-            <div class="menu"><i class="iconfont">&#xe653;</i></div>
+<body ontouchstart>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-558LWD9" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!--<header>-->
+        <!--<div class="topCard">-->
+            <!--<div class="search"><i class="iconfont">&#xe60b;</i></div>-->
+            <!--<div class="logo"><img src="./移动端/zenith-logo.jpg" alt=""></div>-->
+            <!--<div class="menu"><i class="iconfont">&#xe653;</i></div>-->
+        <!--</div>-->
+        <!--<div class="daohang">-->
+            <!--<div class="LocationName">XXX</div>-->
+        <!--</div>-->
+    <!--</header>-->
+    <header id="header" class="width-fill">
+        <div class="weui-flex">
+            <div class="weui-flex__item logo"><a href="/"><img src="./images/logo.jpg" alt="zenith crusher logo"></a></div>
+            <div class="menu-icon"><img src="./images/menu.jpg" alt="menu"></div>
         </div>
-        <div class="daohang">
-            <div class="LocationName">XXX</div>
-        </div>
+        <nav class="menu-nav hidden">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products/">Products</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/cases/">Cases</a></li>
+                <li><a href="/service.html">Service</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
     </header>
+    <div id="title-bar">
+        <div class="title-bar">
+            <div class="weui-flex">
+                <a class="title-forback" href="#" onclick="window.history.back(-1);return false;"><img src="./images/left-arrow.jpg"></a>
+                <div class="weui-flex__item">
+                    <div class="titlebar-sign">
+                        <select class="weui-select titlebar-select">
+                            <option selected="selected" value="/products">Product</option>
+                            <option value="/products/crusher">Crusher</option>
+                            <option value="/products/grinding-mill">Grinding Mill</option>
+                            <option value="/products/feeder-screening">Feeder Screening</option>
+                            <option value="/products/mobile-crusher">Mobile Crusher</option>
+                            <option value="/products/vu-system">VU System</option>
+                            <option value="/products/others">Others</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section>
         <div class="bigMask">
             <video id="my-video" class="video-js vjs-big-play-centered" controls style="width: 100%;height: 3.6rem;"
@@ -59,8 +103,13 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="copyright">Shanghai Zenit Company @2000-2017 Copyrights</div>
+    <!--<footer>-->
+        <!--<div class="copyright">Shanghai Zenit Company @2000-2017 Copyrights</div>-->
+    <!--</footer>-->
+    <footer id="footer" class="width-fill">
+        <div class="weui-footer">
+            <p class="weui-footer__text">Shanghai Zenith company &copy;2000-2018 Copyrights</p>
+        </div>
     </footer>
     <script>
         (function (doc, win) {
@@ -81,9 +130,13 @@
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
     </script>
-    <script src="jquery-1.9.1.js"></script>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/jquery-weui.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/livechat.js"></script>
     <script src="./vide7.1.0/js/video.min.js"></script>
-    <script src="http://vjs.zencdn.net/5.19/lang/zh-CN.js"></script>
-    <script src="./vedio.js"></script>
+    <!--<script src="http://vjs.zencdn.net/5.19/lang/zh-CN.js"></script>-->
+    <script src="./js/vedio.js"></script>
 </body>
 </html>

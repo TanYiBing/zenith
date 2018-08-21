@@ -3,64 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <link rel="stylesheet" href="webport.css">
+    <link rel="stylesheet" href="./style/webport.css">
+    <link rel="stylesheet" href="./style/jquery-weui.min.css">
+    <link rel="stylesheet" href="./style/weui.min.css">
     <title>Title</title>
 </head>
 <body>
-    <header>
-    <div class="topCard">
-        <div class="search"><i class="iconfont">&#xe60b;</i></div>
-        <div class="logo"><img src="./移动端/zenith-logo.jpg" alt=""></div>
-        <div class="menu"><i class="iconfont">&#xe653;</i></div>
+    <!--<header>-->
+    <!--<div class="topCard">-->
+        <!--<div class="search"><i class="iconfont">&#xe60b;</i></div>-->
+        <!--<div class="logo"><img src="./移动端/zenith-logo.jpg" alt=""></div>-->
+        <!--<div class="menu"><i class="iconfont">&#xe653;</i></div>-->
+    <!--</div>-->
+    <!--<div class="daohang">-->
+        <!--<div class="LocationName">XXX</div>-->
+    <!--</div>-->
+<!--</header>-->
+    <header id="header" class="width-fill">
+        <div class="weui-flex">
+            <div class="weui-flex__item logo"><a href="/"><img src="./images/logo.jpg" alt="zenith crusher logo"></a></div>
+            <div class="menu-icon"><img src="./images/menu.jpg" alt="menu"></div>
+        </div>
+        <nav class="menu-nav hidden">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products/">Products</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/cases/">Cases</a></li>
+                <li><a href="/service.html">Service</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="title-bar">
+        <div class="title-bar">
+            <div class="weui-flex">
+                <a class="title-forback" href="#" onclick="window.history.back(-1);return false;"><img src="./images/left-arrow.jpg"></a>
+                <div class="weui-flex__item">
+                    <div class="titlebar-sign">
+                        <select class="weui-select titlebar-select">
+                            <option selected="selected" value="companyPromotion">Company Promotion</option>
+                            <option value="hardwareStrength">Hardware Strength</option>
+                            <option value="industryConference">Industry Conference</option>
+                            <option value="productTopic">Product Topic</option>
+                            <option value="industrialMill">Industrial Milling</option>
+                            <option value="buildingBroke">Building Broken</option>
+                            <option value="metalMine">Metal Mine</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="daohang">
-        <div class="LocationName">XXX</div>
-    </div>
-</header>
-    <section>
+    <section id="companyPromotion">
         <div class="vedioList">
             <div class="vedioRow">
                 <a href="javascript:void(0);" class="vedioCard">
                     <img src="./移动端/01公司宣传/01K系列移动站主题宣传片.jpg" class="ved">
                     <i></i>
-                    <div class="deti">ZENIT AD</div>
+                    <div class="deti">K系列移动站主题宣传片</div>
                 </a>
                 <a href="javascript:void(0);" class="vedioCard">
                     <img src="./移动端/01公司宣传/02MG动画-集团公司介绍.jpg" class="ved">
-                    <div class="deti">ZENIT AD</div>
+                    <div class="deti">集团公司介绍</div>
                 </a>
             </div>
             <div class="vedioRow">
-                <a href="" class="vedioCard">
-                    <img src="./移动端/01公司宣传/01K系列移动站主题宣传片.jpg" class="ved">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/01公司宣传/03MG动画-磨粉产品介绍.jpg" class="ved">
                     <i></i>
-                    <div class="deti">ZENIT AD</div>
+                    <div class="deti">磨粉产品介绍</div>
                 </a>
-                <a href="" class="vedioCard">
-                    <img src="./移动端/01公司宣传/02MG动画-集团公司介绍.jpg" class="ved">
-                    <div class="deti">ZENIT AD</div>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/01公司宣传/04MG动画-破碎产品介绍.jpg" class="ved">
+                    <div class="deti">破碎产品介绍</div>
                 </a>
             </div>
             <div class="vedioRow">
-                <a href="" class="vedioCard">
-                    <img src="./移动端/01公司宣传/01K系列移动站主题宣传片.jpg" class="ved">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/01公司宣传/05工业磨粉主题宣传片.jpg" class="ved">
                     <i></i>
-                    <div class="deti">ZENIT AD</div>
+                    <div class="deti">工业磨粉主题宣传片</div>
                 </a>
-                <a href="" class="vedioCard">
-                    <img src="./移动端/01公司宣传/02MG动画-集团公司介绍.jpg" class="ved">
-                    <div class="deti">ZENIT AD</div>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/01公司宣传/06公司宣传片-带配音.jpg" class="ved">
+                    <div class="deti">公司宣传片-带配音</div>
                 </a>
             </div>
             <div class="vedioRow">
-                <a href="" class="vedioCard">
-                    <img src="./移动端/01公司宣传/01K系列移动站主题宣传片.jpg" class="ved">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/01公司宣传/07公司宣传片-英文-.jpg" class="ved">
                     <i></i>
-                    <div class="deti">ZENIT AD</div>
+                    <div class="deti">公司宣传片-英文</div>
                 </a>
-                <a href="" class="vedioCard">
-                    <img src="./移动端/01公司宣传/02MG动画-集团公司介绍.jpg" class="ved">
-                    <div class="deti">ZENIT AD</div>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/01公司宣传/08公司宣传片-中英文.jpg" class="ved">
+                    <div class="deti">公司宣传片-中英文</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/01公司宣传/09雷霆模式产品篇.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">雷霆模式产品篇</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/01公司宣传/10雷霆模式宣传篇.jpg" class="ved">
+                    <div class="deti">雷霆模式宣传篇</div>
                 </a>
             </div>
             <div class="more">
@@ -68,8 +118,441 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="copyright">Shanghai Zenit Company @2000-2017 Copyrights</div>
+    <section id="hardwareStrength" style="display: none">
+        <div class="vedioList">
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/02硬件实力/01上海华东路总部.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">上海华东路总部</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/02硬件实力/02江苏启东基地.jpg" class="ved">
+                    <div class="deti">江苏启东基地</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/02硬件实力/03河南郑州生产基地.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">河南郑州生产基地</div>
+                </a>
+                <a href="javascript:void(0);javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/02硬件实力/04精益生产篇-K系列移动站.jpg" class="ved">
+                    <div class="deti">精益生产篇-K系列移动站</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/02硬件实力/05精益生产篇-机加工.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">精益生产篇-机加工</div>
+                </a>
+                <a href="javascript:void(0);javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/02硬件实力/06设备发货篇-K系列移动破碎站.jpg" class="ved">
+                    <div class="deti">设备发货篇-K系列移动破碎站</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/02硬件实力/07设备发货篇-轮胎式移动破碎站.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">设备发货篇-轮胎式移动破碎站</div>
+                </a>
+                <a href="javascript:void(0);javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/02硬件实力/08设备发货篇-履带式移动破碎战.jpg" class="ved">
+                    <div class="deti">设备发货篇-履带式移动破碎战</div>
+                </a>
+            </div>
+            <div class="more">
+                <button>MORE</button>
+            </div>
+        </div>
+    </section>
+    <section id="industryConference" style="display: none">
+        <div class="vedioList">
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/03行业会议/01%202016BAUMA国际工程机械展会.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">2016BAUMA国际工程机械展会</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/03行业会议/02古巴部长参观.jpg" class="ved">
+                    <div class="deti">古巴部长参观</div>
+                </a>
+            </div>
+            <div class="more">
+                <button>MORE</button>
+            </div>
+        </div>
+    </section>
+    <section id="productTopic" style="display: none">
+        <div class="vedioList">
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/01C6X系列颚式破碎机.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">C6X系列颚式破碎机</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/02CI5X系列反击破碎机.jpg" class="ved">
+                    <div class="deti">CI5X系列反击破碎机</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/03HPT系列多缸液压圆锥破碎机.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">HPT系列多缸液压圆锥破碎机</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/04HST系列单缸圆锥破碎机.jpg" class="ved">
+                    <div class="deti">HST系列单缸圆锥破碎机</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/05K系列轮胎式移动破碎站.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">K系列轮胎式移动破碎站</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/06LM系列立式磨粉机.jpg" class="ved">
+                    <div class="deti">LM系列立式磨粉机</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/07LUM系列超细立式磨粉机.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">LUM系列超细立式磨粉机</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/08MB5X系列摆式悬辊磨粉机.jpg" class="ved">
+                    <div class="deti">MB5X系列摆式悬辊磨粉机</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/09MTW系列欧版梯形磨粉机.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">MTW系列欧版梯形磨粉机</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/10S5X系列振动筛.jpg" class="ved">
+                    <div class="deti">S5X系列振动筛</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/11VSI6X系列立轴冲击式破碎机.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">VSI6X系列立轴冲击式破碎机</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/12XZM系列超细磨粉机.jpg" class="ved">
+                    <div class="deti">XZM系列超细磨粉机</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/04产品专题/13双齿辊破碎机.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">双齿辊破碎机</div>
+                </a>
+            </div>
+            <div class="more">
+                <button>MORE</button>
+            </div>
+        </div>
+    </section>
+    <section id="industrialMill" style="display: none">
+        <div class="vedioList">
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/01LM立磨现场-甘肃武威.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">LM立磨现场-甘肃武威</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/02LM立磨现场-兰煤能源.jpg" class="ved">
+                    <div class="deti">LM立磨现场-兰煤能源</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/03LM立磨现场-越南.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">LM立磨现场-越南</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/04LUM磨粉机现场-河南南召.jpg" class="ved">
+                    <div class="deti">LUM磨粉机现场-河南南召</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/05MB5X磨粉机现场-山东滨州.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">MB5X磨粉机现场-山东滨州</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/06MTM磨粉机现场-山东济南.jpg" class="ved">
+                    <div class="deti">MTM磨粉机现场-山东济南</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/07MTM磨粉机现场-山西忻州.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">MTM磨粉机现场-山西忻州</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/08MTW磨粉机现场-安徽巢湖.jpg" class="ved">
+                    <div class="deti">MTW磨粉机现场-安徽巢湖</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/09MTW磨粉机现场-江苏海安.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">MTW磨粉机现场-江苏海安</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/10MTW磨粉机现场-江苏南通.jpg" class="ved">
+                    <div class="deti">MTW磨粉机现场-江苏南通</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/11MTW磨粉机现场-山东岳华.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">MTW磨粉机现场-山东岳华</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/12MTW磨粉机现场-山东淄博.jpg" class="ved">
+                    <div class="deti">MTW磨粉机现场-山东淄博</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/13MTW磨粉机现场-山西太原.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">MTW磨粉机现场-山西太原</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/14MTW磨粉机现场-山西榆社.jpg" class="ved">
+                    <div class="deti">MTW磨粉机现场-山西榆社</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/15MTW磨粉机现场-上海宝山.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">MTW磨粉机现场-上海宝山</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/16XZM微粉磨现场-山西晋城.jpg" class="ved">
+                    <div class="deti">XZM微粉磨现场-山西晋城</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-工业磨粉/17球磨机视频.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">球磨机现场</div>
+                </a>
+            </div>
+            <div class="more">
+                <button>MORE</button>
+            </div>
+        </div>
+    </section>
+    <section id="buildingBroke" style="display: none">
+        <div class="vedioList">
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/01K系列履带移动站-筛分现场-靖江市.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">K系列履带移动站-筛分现场-靖江市</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/02K系列移动站-福建连江.jpg" class="ved">
+                    <div class="deti">K系列移动站-福建连江</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/03K系列移动站-河北磁县.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">K系列移动站-河北磁县</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/04K系列移动站-墨西哥.jpg" class="ved">
+                    <div class="deti">K系列移动站-墨西哥</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/05VU骨料优化系统-湖南现场.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">VU骨料优化系统-湖南现场</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/06甘肃天水项目.jpg" class="ved">
+                    <div class="deti">甘肃天水项目</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/07广东惠东项目.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">广东惠东项目</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/08河北石家庄项目.jpg" class="ved">
+                    <div class="deti">河北石家庄项目</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/09河南许昌项目.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">河南许昌项目</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/10破碎现场-阿曼.jpg" class="ved">
+                    <div class="deti">破碎现场-阿曼</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/11破碎现场-福建.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">破碎现场-福建</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/12破碎现场-杭州建德.jpg" class="ved">
+                    <div class="deti">破碎现场-杭州建德</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/13破碎现场-江苏靖江.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">破碎现场-江苏靖江</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/14破碎现场-尼日利亚.jpg" class="ved">
+                    <div class="deti">破碎现场-尼日利亚</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/15破碎现场-赞比亚.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">破碎现场-赞比亚</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/16破碎现场-浙江常山.jpg" class="ved">
+                    <div class="deti">破碎现场-浙江常山</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/17破碎现场-浙江衢州.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">破碎现场-浙江衢州</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/18破碎现场-驻马店.jpg" class="ved">
+                    <div class="deti">破碎现场-驻马店</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/19山东平邑项目.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">山东平邑项目</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/20山东兖州项目.jpg" class="ved">
+                    <div class="deti">山东兖州项目</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/21山西临汾项目.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">山西临汾项目</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/22石家庄井陉项目.jpg" class="ved">
+                    <div class="deti">石家庄井陉项目</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/23小衢山专题片.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">小衢山专题片</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/24浙江兰溪项目.jpg" class="ved">
+                    <div class="deti">浙江兰溪项目</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/25浙江龙游项目.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">浙江龙游项目</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-建筑破碎/26驻马店项目.jpg" class="ved">
+                    <div class="deti">驻马店项目</div>
+                </a>
+            </div>
+
+            <div class="more">
+                <button>MORE</button>
+            </div>
+        </div>
+    </section>
+    <section id="metalMine" style="display: none">
+        <div class="vedioList">
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-金属矿山/01球磨-分级机-浮选机.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">球磨-分级机-浮选机</div>
+                </a>
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-金属矿山/02四川容大矿业.jpg" class="ved">
+                    <div class="deti">四川容大矿业</div>
+                </a>
+            </div>
+            <div class="vedioRow">
+                <a href="javascript:void(0);" class="vedioCard">
+                    <img src="./移动端/05客户现场-金属矿山/03选矿视频资料.jpg" class="ved">
+                    <i></i>
+                    <div class="deti">选矿视频资料</div>
+                </a>
+            </div>
+
+            <div class="more">
+                <button>MORE</button>
+            </div>
+        </div>
+    </section>
+    <!--<footer>-->
+    <!--<div class="copyright">Shanghai Zenit Company @2000-2017 Copyrights</div>-->
+    <!--</footer>-->
+    <footer id="footer" class="width-fill">
+        <div class="weui-footer">
+            <p class="weui-footer__text">Shanghai Zenith company &copy;2000-2018 Copyrights</p>
+        </div>
     </footer>
     <script>
         (function (doc, win) {
@@ -90,7 +573,13 @@
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
     </script>
-    <script src="jquery-1.9.1.js"></script>
-    <script src="./vedio.js"></script>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/jquery-weui.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <!--<script src="./js/common.js"></script>-->
+    <script src="./js/livechat.js"></script>
+    <script src="./vide7.1.0/js/video.min.js"></script>
+    <!--<script src="http://vjs.zencdn.net/5.19/lang/zh-CN.js"></script>-->
+    <script src="./js/vedio.js"></script>
 </body>
 </html>
