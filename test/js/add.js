@@ -1,6 +1,8 @@
 $(document).ready(function(){
     //画册奇数行加深色背景
-    $(".albumCard:Even").addClass("albumEven");
+    $(".album1 .albumCard:Even").addClass("albumEven");
+    $(".album2 .albumCard:Even").addClass("albumEven");
+    $(".album3 .albumCard:Even").addClass("albumEven");
 
 
     const companyPromotion = $('.companyPromotion');
@@ -11,6 +13,11 @@ $(document).ready(function(){
     const buildingBroke = $('.customerSite');
     const metalMine = $('.customerSite');
 
+    const album1 = $('.album1');
+    const album2 = $('.album2');
+    const album3 = $('.album3');
+
+    //图标交互效果
     function iconChange() {
         $('.conLeft li img:nth-child(2)').css('display','none');
         $('.conLeft li img:nth-child(1)').css('display','block');
@@ -18,6 +25,7 @@ $(document).ready(function(){
         $('.curLi img:nth-child(2)').css('display','block');
     }
 
+    //改变左边导航的高度
     function changeConLeftHeight() {
         if($('#conLeft')){
             let conRightHeight= $('.mainBox').outerHeight()+$('.conRightTop').outerHeight();
@@ -26,13 +34,7 @@ $(document).ready(function(){
         }
     }
 
-
-    function liSelected(target) {
-        $(target).siblings('li').removeClass('curLi');
-        $(target).addClass('curLi');
-        iconChange();
-        //实现点击li的效果
-
+    function changeVideoView(target) {
         let id = $(target).attr('id');
         companyPromotion.css('display','none');
         hardwareStrength.css('display','none');
@@ -43,6 +45,26 @@ $(document).ready(function(){
         metalMine.css('display','none');
         let targetClass = '.'+id;
         $(targetClass).css('display','block');
+    }
+
+    function changeAlbumView(target) {
+        let id = $(target).attr('id');
+        album1.css('display','none');
+        album2.css('display','none');
+        album3.css('display','none');
+        let targetClass = '.'+id;
+        $(targetClass).css('display','block');
+    }
+
+
+    function liSelected(target) {
+        $(target).siblings('li').removeClass('curLi');
+        $(target).addClass('curLi');
+        iconChange();
+        //实现点击li的效果
+
+        changeVideoView(target);
+        changeAlbumView(target);
         changeConLeftHeight();
     }
 
@@ -56,15 +78,19 @@ $(document).ready(function(){
         })
     }
 
-    let iconButtons = $('.icon-download');
+
+    //pdf处理
+    let albumCards = $('.albumCard');
     // console.log(iconButtons);
-    for (var i = 0; i <iconButtons.length; i++) {
-        let pdfName = $(iconButtons[i]).prev().text();
-        console.log(pdfName);
-        let pdfUrl = `http://localhost:63342/test/webport/web/viewer.html?file=1.pdf`;
-        $(iconButtons[i]).click(function () {
+    for (let i = 0; i < albumCards.length; i++) {
+        $(albumCards[i]).click(function () {
+            let pdfName = $(albumCards[i]).children('a')[0].innerText;
+            let pdfUrl = `http://localhost:63342/test/webport/web/viewer.html?file=${pdfName}.pdf`;
             $(location).attr('href',pdfUrl);
+            // console.log(pdfName);
         });
     }
-});
 
+    //视频点击播放功能
+    let videoCards = $('.vedioCard');
+});

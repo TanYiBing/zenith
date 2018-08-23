@@ -18,6 +18,9 @@ window.location.href="http://ie.zenithcrusher.com/";
 <!--[if lte IE 8]>
 <link href="../css/ie.css" rel="stylesheet" type="text/css" />
 <![endif]-->
+<link rel="stylesheet" href="../css/add.css"/>
+<script src="../js/jquery-1.9.1.js"></script>
+<script src='//player.polyv.net/script/polyvplayer.min.js'></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
@@ -25,8 +28,93 @@ window.location.href="http://ie.zenithcrusher.com/";
 <link rel="apple-touch-icon" sizes="72x72" href="../head-footer/ico72x72.png" />
 <link rel="apple-touch-icon" sizes="114x114" href="../head-footer/ico114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="../head-footer/ico144x144.png" />
-    <link rel="stylesheet" href="../css/add.css">
-    <script src="../js/jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var isOpen = 0;
+            //全局变量，判断是否已经打开弹出框
+            $(".btnDel").click(function() {
+                //$(".box-mask").css({"display":"block"});
+                $(".box-mask").fadeIn(500);
+                center($(".box"));
+                //载入弹出窗口上的按钮事件
+                checkEvent($(this).parent(), $(".btnSure"), $(".btnCancel"));
+            });
+            function center(obj) {
+                //obj这个参数是弹出框的整个对象
+                var screenWidth = $(window).width(), screenHeigth = $(window).height();
+                //获取屏幕宽高
+                var scollTop = $(document).scrollTop();
+                //当前窗口距离页面顶部的距离
+                var objLeft = (screenWidth - obj.width()) / 2;
+                ///弹出框距离左侧距离
+                var objTop = (screenHeigth - obj.height()) / 2 + scollTop;
+                ///弹出框距离顶部的距离
+                obj.css({
+                    left:objLeft + "px",
+                    top:objTop + "px"
+                });
+                obj.fadeIn(500);
+                //弹出框淡入
+                isOpen = 1;
+                //弹出框打开后这个变量置1 说明弹出框是打开装填
+                //当窗口大小发生改变时
+                $(window).resize(function() {
+                    //只有isOpen状态下才执行
+                    if (isOpen == 1) {
+                        //重新获取数据
+                        screenWidth = $(window).width();
+                        screenHeigth = $(window).height();
+                        var scollTop = $(document).scrollTop();
+                        objLeft = (screenWidth - obj.width()) / 2;
+                        var objTop = (screenHeigth - obj.height()) / 2 + scollTop;
+                        obj.css({
+                            left:objLeft + "px",
+                            top:objTop + "px"
+                        });
+                        obj.fadeIn(500);
+                    }
+                });
+                //当滚动条发生改变的时候
+                $(window).scroll(function() {
+                    if (isOpen == 1) {
+                        //重新获取数据
+                        screenWidth = $(window).width();
+                        screenHeigth = $(window).height();
+                        var scollTop = $(document).scrollTop();
+                        objLeft = (screenWidth - obj.width()) / 2;
+                        var objTop = (screenHeigth - obj.height()) / 2 + scollTop;
+                        obj.css({
+                            left:objLeft + "px",
+                            top:objTop + "px"
+                        });
+                        obj.fadeIn(500);
+                    }
+                });
+            }
+            //导入两个按钮事件 obj整个页面的内容对象，obj1为确认按钮，obj2为取消按钮
+            function checkEvent(obj, obj1, obj2) {
+                //确认后删除页面所有东西
+                obj1.click(function() {
+                    //移除所有父标签内容
+                    obj.remove();
+                    //调用closed关闭弹出框
+                    closed($(".box-mask"), $(".box"));
+                });
+                //取消按钮事件
+                obj2.click(function() {
+                    //调用closed关闭弹出框
+                    closed($(".box-mask"), $(".box"));
+                });
+            }
+            //关闭弹出窗口事件
+            function closed(obj1, obj2) {
+                obj1.fadeOut(500);
+                obj2.fadeOut(500);
+                isOpen = 0;
+            }
+        });
+    </script>
+
     <title>联系我们 - ZENITH上海西芝矿山工程机械有限公司</title>
 </head>
 
@@ -105,7 +193,7 @@ window.location.href="http://ie.zenithcrusher.com/";
         <div class="mainBox">
             <div class="vedioList companyPromotion">
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db00456e606d6236dd18a97d_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/01K系列移动站主题宣传片.jpg" alt="K系列移动站主题宣传片">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -113,7 +201,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>K系列移动站主题宣传片</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db8575ceafef23fdc154a501_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/02MG动画-集团公司介绍.jpg" alt="集团公司介绍">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -121,7 +209,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>集团公司介绍</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db658b1d92bd988ef3703710_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/03MG动画-磨粉产品介绍.jpg" alt="磨粉产品介绍">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -129,7 +217,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>磨粉产品介绍</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbff01bee6683c94c6486b24_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/04MG动画-破碎产品介绍.jpg" alt="破碎产品介绍">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -137,7 +225,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎产品介绍</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dba535fe20f116add1f56e8c_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/05工业磨粉主题宣传片.jpg" alt="工业磨粉主题宣传片">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -145,7 +233,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>工业磨粉主题宣传片</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbcc84402a4622938eeb263d_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/06公司宣传片-带配音.jpg" alt="公司宣传片-带配音">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -153,7 +241,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>公司宣传片</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbf5020d18fbe0a342e4ba40_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/07公司宣传片-英文-.jpg" alt="公司宣传片-英文">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -161,7 +249,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>公司宣传片-英文</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbaa411b7154803bf4d48544_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/08公司宣传片-中英文.jpg" alt="公司宣传片-中英文">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -169,7 +257,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>公司宣传片-中英文</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbd477a49930dc0e53729981_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/09雷霆模式产品篇.jpg" alt="雷霆模式产品篇">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -177,7 +265,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>雷霆模式产品篇</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db79cf7e7d6f16869d7e40e6_2" class="vedio btnDel">
                         <img src="./img/01公司宣传/10雷霆模式宣传篇.jpg" alt="雷霆模式宣传篇">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -187,7 +275,7 @@ window.location.href="http://ie.zenithcrusher.com/";
             </div>
             <div class="vedioList hardwareStrength" style="display: none">
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;"  id="228d7015db9fd7dbd831b586d395e7fb_2" class="vedio btnDel">
                         <img src="./img/02硬件实力/01上海华东路总部.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -195,7 +283,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>上海华东路总部</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db653f0e05f8b2ef789da0ef_2" class="vedio btnDel">
                         <img src="./img/02硬件实力/02江苏启东基地.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -203,7 +291,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>江苏启东基地</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db5632f628dfcf83c59ea9b8_2" class="vedio btnDel">
                         <img src="./img/02硬件实力/03河南郑州生产基地.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -212,7 +300,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                 </div>
 
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db5335ec863cd16987a9af06_2" class="vedio btnDel">
                         <img src="./img/02硬件实力/04精益生产篇-K系列移动站.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -220,7 +308,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>精益生产篇-K系列移动站</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db234583c63182707a849684_2" class="vedio btnDel">
                         <img src="./img/02硬件实力/05精益生产篇-机加工.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -228,7 +316,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>精益生产篇-机加工</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db469a54b08d1ba1cfd9f3a7_2" class="vedio btnDel">
                         <img src="./img/02硬件实力/06设备发货篇-K系列移动破碎站.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -236,7 +324,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>设备发货篇-K系列移动破碎站</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbbd32d9878f9f3e96921b5b_2" class="vedio btnDel">
                         <img src="./img/02硬件实力/07设备发货篇-轮胎式移动破碎站.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -244,7 +332,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>设备发货篇-轮胎式移动破碎站</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db98b926a50a3545c9a7e142_2" class="vedio btnDel">
                         <img src="./img/02硬件实力/08设备发货篇-履带式移动破碎战.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -254,7 +342,7 @@ window.location.href="http://ie.zenithcrusher.com/";
             </div>
             <div class="vedioList industryConference" style="display: none">
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db4e1539c5769182e0282477_2" class="vedio btnDel">
                         <img src="./img/03行业会议/01%202016BAUMA国际工程机械展会.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -262,7 +350,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>2016BAUMA国际工程机械展会</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db19eab356c7364e24908ed5_2" class="vedio btnDel">
                         <img src="./img/03行业会议/02古巴部长参观.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -272,7 +360,7 @@ window.location.href="http://ie.zenithcrusher.com/";
             </div>
             <div class="vedioList productTopic" style="display: none">
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db806c04af7c67eced75af53_2" class="vedio btnDel">
                         <img src="./img/04产品专题/01C6X系列颚式破碎机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -280,7 +368,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>C6X系列颚式破碎机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbadbbcbe093486bb603f29a_2" class="vedio btnDel">
                         <img src="./img/04产品专题/02CI5X系列反击破碎机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -288,7 +376,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>CI5X系列反击破碎机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbc80d60e620a92b06877f80_2" class="vedio btnDel">
                         <img src="./img/04产品专题/03HPT系列多缸液压圆锥破碎机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -296,7 +384,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>HPT系列多缸液压圆锥破碎机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbac9af8c2402fd6e64c822b_2" class="vedio btnDel">
                         <img src="./img/04产品专题/04HST系列单缸圆锥破碎机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -304,7 +392,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>HST系列单缸圆锥破碎机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db9a33da8bbdd9b97bf22bbb_2" class="vedio btnDel">
                         <img src="./img/04产品专题/05K系列轮胎式移动破碎站.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -312,7 +400,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>K系列轮胎式移动破碎站</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbef13f73ad403a00e1fff54_2" class="vedio btnDel">
                         <img src="./img/04产品专题/06LM系列立式磨粉机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -320,7 +408,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>LM系列立式磨粉机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db1862f51fcd594dfd21fad8_2" class="vedio btnDel">
                         <img src="./img/04产品专题/07LUM系列超细立式磨粉机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -328,7 +416,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>LUM系列超细立式磨粉机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db0daf75404627ec91dd2499_2" class="vedio btnDel">
                         <img src="./img/04产品专题/08MB5X系列摆式悬辊磨粉机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -336,7 +424,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MB5X系列摆式悬辊磨粉机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbf3002193bf399046aede93_2" class="vedio btnDel">
                         <img src="./img/04产品专题/09MTW系列欧版梯形磨粉机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -344,7 +432,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTW系列欧版梯形磨粉机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbccc683a346f71cc0cbf142_2" class="vedio btnDel">
                         <img src="./img/04产品专题/10S5X系列振动筛.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -352,7 +440,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>S5X系列振动筛</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db79f552f01fbc46df887c54_2" class="vedio btnDel">
                         <img src="./img/04产品专题/11VSI6X系列立轴冲击式破碎机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -360,7 +448,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>VSI6X系列立轴冲击式破碎机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db7873d25e1d18a3734e185d_2" class="vedio btnDel">
                         <img src="./img/04产品专题/12XZM系列超细磨粉机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -368,7 +456,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>XZM系列超细磨粉机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbb5245a01197c22999b8120_2" class="vedio btnDel">
                         <img src="./img/04产品专题/13双齿辊破碎机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -379,7 +467,7 @@ window.location.href="http://ie.zenithcrusher.com/";
             </div>
             <div class="vedioList industrialMill" style="display: none">
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db2cccb751ec77eaecff4514_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/01LM立磨现场-甘肃武威.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -387,7 +475,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>LM立磨现场-甘肃武威</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db5192d26d9762cb81eb929c_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/02LM立磨现场-兰煤能源.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -395,7 +483,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>LM立磨现场-兰煤能源</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db118029ec68ba2a7e78dfc4_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/03LM立磨现场-越南.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -403,7 +491,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>LM立磨现场-越南</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbb151cc6d12a66f3bf1b085_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/04LUM磨粉机现场-河南南召.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -411,7 +499,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>LUM磨粉机现场-河南南召</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dba3e408937ee6bbaaf0b565_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/05MB5X磨粉机现场-山东滨州.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -419,7 +507,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MB5X磨粉机现场-山东滨州</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db9c5420b5b0b0ff5d01dc51_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/06MTM磨粉机现场-山东济南.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -427,7 +515,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTM磨粉机现场-山东济南</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db17285f0a5a1de6568ee832_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/07MTM磨粉机现场-山西忻州.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -435,7 +523,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTM磨粉机现场-山西忻州</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db38d0d82288bfd1de9f0490_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/08MTW磨粉机现场-安徽巢湖.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -443,7 +531,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTW磨粉机现场-安徽巢湖</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbf594099e8f90a923f85493_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/09MTW磨粉机现场-江苏海安.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -451,7 +539,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTW磨粉机现场-江苏海安</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbc4490ab8e716c33acef2e4_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/10MTW磨粉机现场-江苏南通.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -459,7 +547,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTW磨粉机现场-江苏南通</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbbf711f89f03d4afad01e33_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/11MTW磨粉机现场-山东岳华.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -467,7 +555,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTW磨粉机现场-山东岳华</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbec7850fa89e653fb482369_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/12MTW磨粉机现场-山东淄博.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -475,7 +563,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTW磨粉机现场-山东淄博</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db8840de81937b316af439b5_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/13MTW磨粉机现场-山西太原.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -483,7 +571,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTW磨粉机现场-山西太原</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db3bf53b6bad14e111518462_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/14MTW磨粉机现场-山西榆社.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -491,7 +579,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>磨粉机现场-山西榆社</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db1908c4b5025923dee6be19_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/15MTW磨粉机现场-上海宝山.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -499,7 +587,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>MTW磨粉机现场-上海宝山</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbdc3b2e1dd1307756d2aa11_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/16XZM微粉磨现场-山西晋城.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -507,7 +595,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>XZM微粉磨现场-山西晋城</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db131dd1a3d315407e7af625_2" class="vedio btnDel">
                         <img src="./img/05客户现场-工业磨粉/17球磨机视频.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -517,7 +605,7 @@ window.location.href="http://ie.zenithcrusher.com/";
             </div>
             <div class="vedioList buildingBroke" style="display: none">
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db212a240754f74cc464df05_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/01K系列履带移动站-筛分现场-靖江市.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -525,7 +613,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>K系列履带移动站-筛分现场-靖江市</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db221f47cebbabe65fc059d4_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/02K系列移动站-福建连江.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -533,7 +621,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>K系列移动站-福建连江</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db6ebc3c881c3ee47381ad19_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/03K系列移动站-河北磁县.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -541,7 +629,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>K系列移动站-河北磁县</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbbdab8b8ab5ec329de5b16d_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/04K系列移动站-墨西哥.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -549,7 +637,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>K系列移动站-墨西哥</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbfb2a9368be6542a7c53082_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/05VU骨料优化系统-湖南现场.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -557,7 +645,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>VU骨料优化系统-湖南现场</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db84ece4f13ae6d9b41f5a1a_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/06甘肃天水项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -565,7 +653,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>甘肃天水项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db7135ecdcc5ce1f17f2050e_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/07广东惠东项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -573,7 +661,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>广东惠东项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbe81c75070755d08eab2406_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/08河北石家庄项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -581,7 +669,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>河北石家庄项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db420b5adc6138b781ac668b_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/09河南许昌项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -589,7 +677,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>河南许昌项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbb3545146a9189591fb2782_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/10破碎现场-阿曼.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -597,7 +685,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎现场-阿曼</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db74c3738edcb85afb8d7951_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/11破碎现场-福建.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -605,7 +693,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎现场-福建</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbd1cd819ad8d077d743c884_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/12破碎现场-杭州建德.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -613,7 +701,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎现场-杭州建德</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db80ce243007eb9f7fa43fce_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/13破碎现场-江苏靖江.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -621,7 +709,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎现场-江苏靖江</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbac7ca4176cfdbf3aa839d8_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/14破碎现场-尼日利亚.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -629,7 +717,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎现场-尼日利亚</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db87bfdc46cbe01d094c79cd_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/15破碎现场-赞比亚.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -637,7 +725,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎现场-赞比亚</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db7d3070e847c7c1a885d446_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/16破碎现场-浙江常山.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -645,7 +733,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎现场-浙江常山</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbc1f500e9eeb13a67cc2cb3_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/17破碎现场-浙江衢州.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -653,7 +741,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎现场-浙江衢州</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db1b7081dc887086085fa2be_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/18破碎现场-驻马店.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -661,7 +749,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>破碎现场-驻马店</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db401972a9a251dae3a6ae59_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/19山东平邑项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -669,7 +757,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>山东平邑项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db0b8748a811186ea0c418ff_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/20山东兖州项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -677,7 +765,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>山东兖州项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbceb0f004ff9ebb0027fa91_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/21山西临汾项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -685,7 +773,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>山西临汾项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db459281e9937669754d916f_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/22石家庄井陉项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -693,7 +781,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>石家庄井陉项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbeb0d64bac9f1b38dda135f_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/23小衢山专题片.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -701,7 +789,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>小衢山专题片</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db9277e5d6ec2e49a171340c_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/24浙江兰溪项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -709,7 +797,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>浙江兰溪项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db40ceaa0b2e143002a151b8_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/25浙江龙游项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -717,7 +805,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>浙江龙游项目</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015dbf2988b8de087d7a2351c3e_2" class="vedio btnDel">
                         <img src="./img/05客户现场-建筑破碎/26驻马店项目.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -727,7 +815,7 @@ window.location.href="http://ie.zenithcrusher.com/";
             </div>
             <div class="vedioList metalMine" style="display: none">
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db0d0e8cc0ac11e53ee3e6e6_2" class="vedio btnDel">
                         <img src="./img/05客户现场-金属矿山/01球磨-分级机-浮选机.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -735,7 +823,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>球磨-分级机-浮选机</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db59bfd8f4b8dd0341872b31_2" class="vedio btnDel">
                         <img src="./img/05客户现场-金属矿山/02四川容大矿业.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -743,7 +831,7 @@ window.location.href="http://ie.zenithcrusher.com/";
                     <span>四川容大矿业</span>
                 </div>
                 <div class="vedioCard">
-                    <a href="" class="vedio">
+                    <a href="javascript:;" id="228d7015db12fcd9a62b5abc1f76540f_2" class="vedio btnDel">
                         <img src="./img/05客户现场-金属矿山/03选矿视频资料.jpg" alt="">
                         <div class="mask"></div>
                         <i class="card_hover"></i>
@@ -840,5 +928,29 @@ window.location.href="http://ie.zenithcrusher.com/";
 <script type="text/javascript" src="../js/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script src="../js/add.js"></script>
+<div class="box-mask"></div>
+<div class="box">
+    <input  class="btnCancel" type="button"  value="关闭">
+    <script src='//player.polyv.net/script/polyvplayer.min.js'></script>
+    <div id='' class="demo"></div>
+    <script>
+        let videoDiv = $('.box div');
+        $(".btnDel").click(function() {
+            let vid = $(this).attr('id');
+            console.log(vid);
+            let plv = 'plv_' + vid;
+            let plvObj = '#' +  plv;
+            $(videoDiv).attr('id', plv);
+            let plvConfig = {
+                'width':'100%',
+                'height':'100%',
+                'vid' : vid
+            }
+            let player = polyvObject(plvObj).videoPlayer(plvConfig);
+        });
+    </script>
+</div>
 </body>
 </html>
+
+
