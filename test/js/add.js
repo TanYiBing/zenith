@@ -9,9 +9,9 @@ $(document).ready(function(){
     const hardwareStrength = $('.hardwareStrength');
     const industryConference = $('.industryConference');
     const productTopic = $('.productTopic');
-    const industrialMill = $('.customerSite');
-    const buildingBroke = $('.customerSite');
-    const metalMine = $('.customerSite');
+    const industrialMill = $('.industrialMill');
+    const buildingBroke = $('.buildingBroke');
+    const metalMine = $('.metalMine');
 
     const album1 = $('.album1');
     const album2 = $('.album2');
@@ -75,7 +75,7 @@ $(document).ready(function(){
         $(lis[i]).click(function (tar) {
             // console.log(tar);
             liSelected(tar.currentTarget);
-        })
+        });
     }
 
 
@@ -91,6 +91,4 @@ $(document).ready(function(){
         });
     }
 
-    //视频点击播放功能
-    let videoCards = $('.vedioCard');
 });

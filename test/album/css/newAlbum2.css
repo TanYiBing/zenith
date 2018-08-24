@@ -1,0 +1,83 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,img,strong,b,u,i,dl,dt,dd,ol,ul,li,form,label,menu,nav,input,textarea,blockquote{ margin:0; padding:0; border:0; }
+:root {
+    font-size: 625%;
+}
+
+body {
+
+    background-color: #eeeeee;
+}
+
+header {
+    background-color: #fff;
+}
+.topCard {
+    height: 0.8rem;
+    line-height: 0.8rem;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.topCard span {
+    flex: 33.33333333%;
+    text-align: center;
+    font-size: 0.4rem;
+    color: #9f9f9f;
+    border-bottom: 0.01rem solid #d6d6d6;
+}
+.topCard .selected {
+    border-bottom: 0.02rem solid #febf01;
+    font-weight: bold;
+    color: #3b4255;
+}
+
+.albumCard {
+    padding:0.2rem 0.2rem 0.78rem 0.2rem;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+}
+
+.cutLine {
+    width: 3px;
+    flex-grow: 0;
+    height: 3.1rem;
+    background-color: #fff;
+}
+
+.cutLine .blackLine {
+    margin-top: 0.27rem;
+    width: 3px;
+    height: 2.6rem;
+    background-color: #e3e3e3;
+}
+
+.album {
+    flex: 33%;
+    flex-grow: 0;
+    height: 3.1rem;
+    margin-bottom: 0.2rem;
+    background-color: #fff;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.albumImg {
+    height: 2.35rem;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    padding-top: 0.4rem;
+    /*flex-direction: column-reverse;*/
+}
+.albumImg img {
+    width: 1.5rem;
+    height: 1.9rem;
+}
+.album span {
+    line-height: 0.75rem;
+    text-align: center;
+    font-size: 0.24rem;
+}
