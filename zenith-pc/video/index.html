@@ -1,0 +1,1030 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--[if lte IE 6]>
+<script type="text/javascript">
+window.location.href="http://ie.zenithcrusher.com/";
+</script>
+<![endif]-->
+
+<!--[if !IE]><!--> 
+<link href="http://static.zenithmining.com/d/file/css/common.css" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+
+<!--[if gte IE 9]>
+<link href="http://static.zenithmining.com/d/file/css/common.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<!--[if lte IE 8]>
+<link href="http://static.zenithmining.com/d/file/css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link rel="stylesheet" href="http://static.zenithmining.com/d/file/css/add.css"/>
+<script src="http://static.zenithmining.com/d/file/js/jquery-1.9.1.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b490e022435e85d76b5e8edd8e038ee7";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<script src='//player.polyv.net/script/polyvplayer.min.js'></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b490e022435e85d76b5e8edd8e038ee7";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<link rel="apple-touch-icon" href="http://static.zenithmining.com/d/file/images/head-footer/ico57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://static.zenithmining.com/d/file/images/head-footer/ico72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://static.zenithmining.com/d/file/images/head-footer/ico114x114.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="http://static.zenithmining.com/d/file/images/head-footer/ico144x144.png" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var isOpen = 0;
+            //全局变量，判断是否已经打开弹出框
+            $(".btnDel").click(function() {
+                //$(".box-mask").css({"display":"block"});
+                $(".box-mask").fadeIn(500);
+                center($(".box"));
+                //载入弹出窗口上的按钮事件
+                checkEvent($(this).parent(), $(".btnSure"), $(".btnCancel"));
+            });
+            function center(obj) {
+                //obj这个参数是弹出框的整个对象
+                var screenWidth = $(window).width(), screenHeigth = $(window).height();
+                //获取屏幕宽高
+                var scollTop = $(document).scrollTop();
+                //当前窗口距离页面顶部的距离
+                var objLeft = (screenWidth - obj.width()) / 2;
+                ///弹出框距离左侧距离
+                var objTop = (screenHeigth - obj.height()) / 2 + scollTop;
+                ///弹出框距离顶部的距离
+                obj.css({
+                    left:objLeft + "px",
+                    top:objTop + "px"
+                });
+                obj.fadeIn(500);
+                //弹出框淡入
+                isOpen = 1;
+                //弹出框打开后这个变量置1 说明弹出框是打开装填
+                //当窗口大小发生改变时
+                $(window).resize(function() {
+                    //只有isOpen状态下才执行
+                    if (isOpen == 1) {
+                        //重新获取数据
+                        screenWidth = $(window).width();
+                        screenHeigth = $(window).height();
+                        var scollTop = $(document).scrollTop();
+                        objLeft = (screenWidth - obj.width()) / 2;
+                        var objTop = (screenHeigth - obj.height()) / 2 + scollTop;
+                        obj.css({
+                            left:objLeft + "px",
+                            top:objTop + "px"
+                        });
+                        obj.fadeIn(500);
+                    }
+                });
+                //当滚动条发生改变的时候
+                $(window).scroll(function() {
+                    if (isOpen == 1) {
+                        //重新获取数据
+                        screenWidth = $(window).width();
+                        screenHeigth = $(window).height();
+                        var scollTop = $(document).scrollTop();
+                        objLeft = (screenWidth - obj.width()) / 2;
+                        var objTop = (screenHeigth - obj.height()) / 2 + scollTop;
+                        obj.css({
+                            left:objLeft + "px",
+                            top:objTop + "px"
+                        });
+                        obj.fadeIn(500);
+                    }
+                });
+            }
+            //导入两个按钮事件 obj整个页面的内容对象，obj1为确认按钮，obj2为取消按钮
+            function checkEvent(obj, obj1, obj2) {
+                //确认后删除页面所有东西
+                obj1.click(function() {
+                    //移除所有父标签内容
+                    obj.remove();
+                    //调用closed关闭弹出框
+                    closed($(".box-mask"), $(".box"));
+                });
+                //取消按钮事件
+                obj2.click(function() {
+                    //调用closed关闭弹出框
+                    closed($(".box-mask"), $(".box"));
+                });
+            }
+            //关闭弹出窗口事件
+            function closed(obj1, obj2) {
+                obj1.fadeOut(500);
+                obj2.fadeOut(500);
+                isOpen = 0;
+            }
+        });
+    </script>
+
+    <title>联系我们 - ZENITH上海西芝矿山工程机械有限公司</title>
+</head>
+
+<body>
+<div id="topLocation" class="topLocation">
+  <div class="topLocIn" id="topLocIn">
+
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div id="top" class="top">
+
+      <div class="topLeft"><a href="/"><img src="http://static.zenithmining.com/d/file/images/head-footer/logo.jpg" /></a></div>
+      <div class="topRightIco" id="topRightIco"><img src="http://static.zenithmining.com/d/file/images/head-footer/topRightIco.png" width="15" height="25" /></div>
+      
+      <div class="topRight" id="topRight">
+        <div class="location"><a href="/contact/our-location.html" target="_blank">我们的位置</a> <span style="font-size:10px">|</span> <a href="/contact/">联系我们</a></div>
+        <div class="websites" id="changeLan">
+
+        </div>
+      </div>
+
+  <div class="clear"></div>
+</div>
+<div class="navigation" id="navgation">
+  <div class="navigationLeft">导航菜单</div>
+  <div class="navigationRight"><img src="http://static.zenithmining.com/d/file/images/head-footer/navIco.png" width="23" height="28" id="nav" /></div>
+</div>
+
+<div id="menu" class="menu">
+  <div class="menuin">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li class=""><a href="/about/" rel="nofollow">关于我们</a></li>
+        <li class=""><a href="/products/">产品</a></li>
+        <li class=""><a href="/solutions/">解决方案</a></li>
+         <li class=" "><a href="/xinwen/">新闻</a></li>
+        <li class="menuLast menuin-cur"><a href="/contact/" rel="nofollow">联系我们</a></li>
+      </ul>
+  </div>
+</div>
+<div class="menuNav">
+    <div class="menuNavin">
+        <a href="../"> > 首页</a>
+        <a href="./"> > 视频</a>
+    </div>
+</div>
+
+<div class="main">
+  <div class="content">
+    <div id="conLeft" class="conLeft">
+      <ul>
+          <li id="companyPromotion" class="curLi"><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/公司宣传.png" alt="" style="display: none"><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/公司宣传-交互.png" alt=""><a href="javascript:void(0);">公司宣传</a></li>
+          <li id="hardwareStrength"><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/硬件实力.png" alt=""><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/硬件实力-交互.png" alt="" style="display: none"><a href="javascript:void(0);">硬件实力</a></li>
+          <li id="industryConference"><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/行业会议.png" alt=""><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/行业会议-交互.png" alt="" style="display: none"><a href="javascript:void(0);">行业会议</a></li>
+          <li id="productTopic"><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/产品专题.png" alt=""><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/产品专题-交互.png" alt="" style="display: none"><a href="javascript:void(0);">产品专题</a></li>
+          <li id="industrialMill"><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/客户现场.png" alt=""><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/客户现场-交互.png" alt="" style="display: none"><a href="javascript:void(0);">工业磨粉</a></li>
+          <li id="buildingBroke"><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/客户现场.png" alt=""><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/客户现场-交互.png" alt="" style="display: none"><a href="javascript:void(0);">建筑破碎</a></li>
+          <li id="metalMine"><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/客户现场.png" alt=""><img src="http://static.zenithmining.com/d/file/images/video/PC端图标/客户现场-交互.png" alt="" style="display: none"><a href="javascript:void(0);">金属矿山</a></li>
+          <li class="conLeftLast"> </li>
+      </ul>
+    </div>
+    <div id="conRight" class="conRight">
+      <div class="topSelect">
+          <select onchange="location.href=this.options[this.selectedIndex].value;">
+            <option value="/contact/">联系我们</option>
+            <option value="/contact/our-location.html">我们的位置</option>
+          </select>
+      </div>
+      <div class="conRightTop">
+        <div class="conRightTopin">
+          <h1>视频</h1>
+        </div>
+      </div>
+      <div class="conRightMain">
+        <div class="mainBox">
+            <div class="vedioList companyPromotion">
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db00456e606d6236dd18a97d_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/01K系列移动站主题宣传片.jpg" alt="K系列移动站主题宣传片">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>K系列移动站主题宣传片</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db8575ceafef23fdc154a501_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/02MG动画-集团公司介绍.jpg" alt="集团公司介绍">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>集团公司介绍</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db658b1d92bd988ef3703710_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/03MG动画-磨粉产品介绍.jpg" alt="磨粉产品介绍">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>磨粉产品介绍</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbff01bee6683c94c6486b24_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/04MG动画-破碎产品介绍.jpg" alt="破碎产品介绍">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎产品介绍</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dba535fe20f116add1f56e8c_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/05工业磨粉主题宣传片.jpg" alt="工业磨粉主题宣传片">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>工业磨粉主题宣传片</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbcc84402a4622938eeb263d_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/06公司宣传片-带配音.jpg" alt="公司宣传片-带配音">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>公司宣传片</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbf5020d18fbe0a342e4ba40_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/07公司宣传片-英文-.jpg" alt="公司宣传片-英文">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>公司宣传片-英文</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbaa411b7154803bf4d48544_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/08公司宣传片-中英文.jpg" alt="公司宣传片-中英文">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>公司宣传片-中英文</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbd477a49930dc0e53729981_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/09雷霆模式产品篇.jpg" alt="雷霆模式产品篇">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>雷霆模式产品篇</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db79cf7e7d6f16869d7e40e6_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/01公司宣传/10雷霆模式宣传篇.jpg" alt="雷霆模式宣传篇">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>雷霆模式宣传篇</span>
+                </div>
+            </div>
+            <div class="vedioList hardwareStrength" style="display: none">
+                <div class="vedioCard">
+                    <a href="javascript:;"  id="228d7015db9fd7dbd831b586d395e7fb_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/02硬件实力/01上海华东路总部.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>上海华东路总部</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db653f0e05f8b2ef789da0ef_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/02硬件实力/02江苏启东基地.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>江苏启东基地</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db5632f628dfcf83c59ea9b8_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/02硬件实力/03河南郑州生产基地.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>河南郑州生产基地</span>
+                </div>
+
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db5335ec863cd16987a9af06_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/02硬件实力/04精益生产篇-K系列移动站.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>精益生产篇-K系列移动站</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db234583c63182707a849684_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/02硬件实力/05精益生产篇-机加工.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>精益生产篇-机加工</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db469a54b08d1ba1cfd9f3a7_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/02硬件实力/06设备发货篇-K系列移动破碎站.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>设备发货篇-K系列移动破碎站</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbbd32d9878f9f3e96921b5b_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/02硬件实力/07设备发货篇-轮胎式移动破碎站.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>设备发货篇-轮胎式移动破碎站</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db98b926a50a3545c9a7e142_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/02硬件实力/08设备发货篇-履带式移动破碎战.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>设备发货篇-履带式移动破碎战</span>
+                </div>
+            </div>
+            <div class="vedioList industryConference" style="display: none">
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db4e1539c5769182e0282477_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/03行业会议/01%202016BAUMA国际工程机械展会.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>2016BAUMA国际工程机械展会</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db19eab356c7364e24908ed5_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/03行业会议/02古巴部长参观.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>古巴部长参观</span>
+                </div>
+            </div>
+            <div class="vedioList productTopic" style="display: none">
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db806c04af7c67eced75af53_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/01C6X系列颚式破碎机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>C6X系列颚式破碎机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbadbbcbe093486bb603f29a_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/02CI5X系列反击破碎机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>CI5X系列反击破碎机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbc80d60e620a92b06877f80_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/03HPT系列多缸液压圆锥破碎机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>HPT系列多缸液压圆锥破碎机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbac9af8c2402fd6e64c822b_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/04HST系列单缸圆锥破碎机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>HST系列单缸圆锥破碎机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db9a33da8bbdd9b97bf22bbb_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/05K系列轮胎式移动破碎站.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>K系列轮胎式移动破碎站</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbef13f73ad403a00e1fff54_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/06LM系列立式磨粉机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>LM系列立式磨粉机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db1862f51fcd594dfd21fad8_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/07LUM系列超细立式磨粉机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>LUM系列超细立式磨粉机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db0daf75404627ec91dd2499_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/08MB5X系列摆式悬辊磨粉机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MB5X系列摆式悬辊磨粉机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbf3002193bf399046aede93_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/09MTW系列欧版梯形磨粉机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTW系列欧版梯形磨粉机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbccc683a346f71cc0cbf142_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/10S5X系列振动筛.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>S5X系列振动筛</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db79f552f01fbc46df887c54_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/11VSI6X系列立轴冲击式破碎机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>VSI6X系列立轴冲击式破碎机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db7873d25e1d18a3734e185d_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/12XZM系列超细磨粉机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>XZM系列超细磨粉机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbb5245a01197c22999b8120_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/04产品专题/13双齿辊破碎机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>双齿辊破碎机</span>
+                </div>
+
+            </div>
+            <div class="vedioList industrialMill" style="display: none">
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db2cccb751ec77eaecff4514_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/01LM立磨现场-甘肃武威.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>LM立磨现场-甘肃武威</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db5192d26d9762cb81eb929c_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/02LM立磨现场-兰煤能源.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>LM立磨现场-兰煤能源</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db118029ec68ba2a7e78dfc4_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/03LM立磨现场-越南.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>LM立磨现场-越南</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbb151cc6d12a66f3bf1b085_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/04LUM磨粉机现场-河南南召.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>LUM磨粉机现场-河南南召</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dba3e408937ee6bbaaf0b565_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/05MB5X磨粉机现场-山东滨州.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MB5X磨粉机现场-山东滨州</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db9c5420b5b0b0ff5d01dc51_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/06MTM磨粉机现场-山东济南.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTM磨粉机现场-山东济南</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db17285f0a5a1de6568ee832_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/07MTM磨粉机现场-山西忻州.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTM磨粉机现场-山西忻州</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db38d0d82288bfd1de9f0490_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/08MTW磨粉机现场-安徽巢湖.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTW磨粉机现场-安徽巢湖</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbf594099e8f90a923f85493_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/09MTW磨粉机现场-江苏海安.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTW磨粉机现场-江苏海安</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbc4490ab8e716c33acef2e4_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/10MTW磨粉机现场-江苏南通.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTW磨粉机现场-江苏南通</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbbf711f89f03d4afad01e33_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/11MTW磨粉机现场-山东岳华.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTW磨粉机现场-山东岳华</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbec7850fa89e653fb482369_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/12MTW磨粉机现场-山东淄博.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTW磨粉机现场-山东淄博</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db8840de81937b316af439b5_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/13MTW磨粉机现场-山西太原.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTW磨粉机现场-山西太原</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db3bf53b6bad14e111518462_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/14MTW磨粉机现场-山西榆社.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>磨粉机现场-山西榆社</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db1908c4b5025923dee6be19_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/15MTW磨粉机现场-上海宝山.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>MTW磨粉机现场-上海宝山</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbdc3b2e1dd1307756d2aa11_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/16XZM微粉磨现场-山西晋城.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>XZM微粉磨现场-山西晋城</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db131dd1a3d315407e7af625_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-工业磨粉/17球磨机视频.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>球磨机视频</span>
+                </div>
+            </div>
+            <div class="vedioList buildingBroke" style="display: none">
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db212a240754f74cc464df05_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/01K系列履带移动站-筛分现场-靖江市.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>K系列履带移动站-筛分现场-靖江市</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db221f47cebbabe65fc059d4_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/02K系列移动站-福建连江.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>K系列移动站-福建连江</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db6ebc3c881c3ee47381ad19_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/03K系列移动站-河北磁县.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>K系列移动站-河北磁县</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbbdab8b8ab5ec329de5b16d_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/04K系列移动站-墨西哥.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>K系列移动站-墨西哥</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbfb2a9368be6542a7c53082_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/05VU骨料优化系统-湖南现场.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>VU骨料优化系统-湖南现场</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db84ece4f13ae6d9b41f5a1a_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/06甘肃天水项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>甘肃天水项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db7135ecdcc5ce1f17f2050e_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/07广东惠东项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>广东惠东项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbe81c75070755d08eab2406_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/08河北石家庄项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>河北石家庄项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db420b5adc6138b781ac668b_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/09河南许昌项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>河南许昌项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbb3545146a9189591fb2782_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/10破碎现场-阿曼.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎现场-阿曼</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db74c3738edcb85afb8d7951_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/11破碎现场-福建.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎现场-福建</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbd1cd819ad8d077d743c884_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/12破碎现场-杭州建德.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎现场-杭州建德</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db80ce243007eb9f7fa43fce_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/13破碎现场-江苏靖江.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎现场-江苏靖江</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbac7ca4176cfdbf3aa839d8_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/14破碎现场-尼日利亚.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎现场-尼日利亚</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db87bfdc46cbe01d094c79cd_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/15破碎现场-赞比亚.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎现场-赞比亚</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db7d3070e847c7c1a885d446_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/16破碎现场-浙江常山.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎现场-浙江常山</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbc1f500e9eeb13a67cc2cb3_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/17破碎现场-浙江衢州.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎现场-浙江衢州</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db1b7081dc887086085fa2be_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/18破碎现场-驻马店.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>破碎现场-驻马店</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db401972a9a251dae3a6ae59_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/19山东平邑项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>山东平邑项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db0b8748a811186ea0c418ff_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/20山东兖州项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>山东兖州项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbceb0f004ff9ebb0027fa91_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/21山西临汾项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>山西临汾项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db459281e9937669754d916f_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/22石家庄井陉项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>石家庄井陉项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbeb0d64bac9f1b38dda135f_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/23小衢山专题片.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>小衢山专题片</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db9277e5d6ec2e49a171340c_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/24浙江兰溪项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>浙江兰溪项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db40ceaa0b2e143002a151b8_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/25浙江龙游项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>浙江龙游项目</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015dbf2988b8de087d7a2351c3e_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-建筑破碎/26驻马店项目.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>驻马店项目</span>
+                </div>
+            </div>
+            <div class="vedioList metalMine" style="display: none">
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db0d0e8cc0ac11e53ee3e6e6_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-金属矿山/01球磨-分级机-浮选机.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>球磨-分级机-浮选机</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db59bfd8f4b8dd0341872b31_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-金属矿山/02四川容大矿业.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>四川容大矿业</span>
+                </div>
+                <div class="vedioCard">
+                    <a href="javascript:;" id="228d7015db12fcd9a62b5abc1f76540f_2" class="vedio btnDel">
+                        <img src="http://static.zenithmining.com/d/file/images/video/05客户现场-金属矿山/03选矿视频资料.jpg" alt="">
+                        <div class="mask"></div>
+                        <i class="card_hover"></i>
+                    </a>
+                    <span>选矿视频资料</span>
+                </div>
+            </div>
+        </div>
+          <div class="sideBar">
+              <div class="sideBarin">
+                  <div class="sideContact">
+                      <h2>联系我们</h2>
+                  </div>
+                  <form action="http://inquiry.zenithcrusher.com/updata_ppc.php" method="post" name="form" id="rightform" style="margin-top:0;" onSubmit="return checkForm();">
+                      <p>询价</p>
+                      <div>
+                          <input name="name" type="text" id="name" style="width:100%;height:20px;margin:6px 0;border:1px solid #d7d9d8;padding-left:3px" placeholder="姓名" />
+                      </div>
+                      <div>
+                          <input name="email" type="text" id="email" style="width:100%;height:20px;margin:6px 0;border:1px solid #d7d9d8;padding-left:3px" placeholder="邮箱" />
+                      </div>
+                      <div>
+                          <input type="text" name="country" id="country" style="width:100%;height:20px;margin:6px 0;border:1px solid #d7d9d8;padding-left:3px" placeholder="国家" />
+                      </div>
+                      <div style="height:3px; clear:both;"></div>
+                      <div>
+                          <select name="equipment[]" style="width:100%;height:20px;margin:6px 0;border:1px solid #d7d9d8;padding-left:3px;color:#777" onclick="this.style.color='#333'">
+                              <option value="Crushing Equipment" selected="selected">选择产品</option>
+                              <option value="Jaw Crusher">颚式破碎机</option>
+                              <option value="Cone Crusher">圆锥破碎机</option>
+                              <option value="Impact Crusher">反击式破碎机</option>
+                              <option value="Grinding Mill">磨粉机</option>
+                              <option value="Vibrating Screen">振动筛</option>
+                              <option value="Vibrating Feeder">振动给料机</option>
+                              <option value="Washing Machine">洗砂机</option>
+                              <option value="Beneficiation">选矿设备</option>
+                              <option value="Mobile Crushing Plant">移动破碎站</option>
+                              <option value="Other Equipment">其它设备</option>
+                          </select>
+                      </div>
+                      <div style="height:3px; clear:both;"></div>
+                      <div>
+                          <textarea name="content" style="width:100%;height:70px;border:1px solid #d7d9d8;margin:6px 0;;padding-left:3px" id="formMsg" placeholder="询价"></textarea>
+                      </div>
+                      <div>
+                          <input name="submit" type="submit" id="submit3" value=" 发送 " style="border:1px solid #d7d9d8;margin:6px 0;padding:0 3px;" />
+                      </div>
+                      <br />
+                      <br />
+                  </form>
+                  <!--[if lt IE 8]>
+                  <script type="text/javascript">
+                      var input = document.getElementsByTagName("input");
+                      for(i=0;i<input.length;i++){
+                          (function(inp){
+                              var place = inp.getAttribute("placeholder");
+                              inp.value=place;
+                              inp.onfocus=function(){if(this.value==place){this.value=""}};
+                              inp.onblur=function(){if(this.value==""){this.value=place}}
+                          })(input[i])
+                      }
+
+                  </script>
+                  <![endif]-->
+                  <div class="sideContact" style="margin-top:10px;">
+                      <p class="sideTel sideText">02158385881</p>
+                      <p class="sideFax sideText">02158383028</p>
+                      <p class="sideMail sideText">info@zenithmining.com</p>
+                  </div>
+                  <div class="servOnline" id="servOnline">
+                      <p>免费在线咨询<span> > </span></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="clear"></div>
+<div id="toTop" class="toTop">
+    <div class="toTopImg">
+        <a href="#top"><img src="http://static.zenithmining.com/d/file/images/head-footer/toTop.png" width="30" height="15" /></a>
+    </div>
+</div>
+<div id="footer" class="footer">
+    <div class="footerin">
+        <div class="footerinLeft">上海西芝矿山工程机械有限公司 © 2000-2015 版权所有</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://static.zenithmining.com/d/file/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="http://static.zenithmining.com/d/file/js/common.js"></script>
+<script type="text/javascript" src="http://static.zenithmining.com/d/file/js/en.js"></script>
+<script type="text/javascript" src="http://static.zenithmining.com/d/file/js/add.js"></script>
+<div class="box-mask"></div>
+<div class="box">
+    <input  class="btnCancel" type="button"  value="关闭">
+    <script src='//player.polyv.net/script/polyvplayer.min.js'></script>
+    <div id='' class="demo"></div>
+    <script>
+        let videoDiv = $('.box div');
+        $(".btnDel").click(function() {
+            let vid = $(this).attr('id');
+            console.log(vid);
+            let plv = 'plv_' + vid;
+            let plvObj = '#' +  plv;
+            $(videoDiv).attr('id', plv);
+            let plvConfig = {
+                'width':'100%',
+                'height':'100%',
+                'vid' : vid
+            }
+            let player = polyvObject(plvObj).videoPlayer(plvConfig);
+        });
+    </script>
+</div>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    var pluginUrl =
+        '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+    _gaq.push(['_setAccount', 'UA-476894-8']);
+    _gaq.push(['_setDomainName', 'zenithcrusher.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+<script type="text/javascript">
+    function textacc(){
+        _gaq.push(['_trackEvent', '商务通', '接受', 'chat']);
+        _gaq.push(['_linkByPost', this]);
+    }
+
+    function checkopen(){
+        if(window.hasOwnProperty('openZoosUrl') && !openZoosUrl.custom)
+        {
+            window.clearInterval(checking)
+            window.openZoosUrl = function(url,data){
+                openZoosUrl.custom = true;
+                if (typeof(openZoosUrl_UserDefine) == 'function'){if(openZoosUrl_UserDefine())return;};if (typeof (LR_istate) != 'undefined') {LR_istate=3;}var lr_url1=url;if (typeof (LR_opentimeout) != 'undefined' && typeof (LR_next_invite_seconds) != 'undefined')LR_next_invite_seconds=999999;if(url=='sendnote'){url=LR_sysurl+'LR/Chatwin2.aspx?siteid='+LR_websiteid+'&cid='+LR_cid+'&sid='+LR_sid+'&lng='+LR_lng+'&p='+escape(location.href)+lr_refer5238();}else{url=((LR_userurl0 && typeof (LR_userurl) != 'undefined')?LR_userurl:(LR_sysurl+'LR/Chatpre.aspx'))+'?id='+LR_websiteid+'&cid='+LR_cid+'&lng='+LR_lng+'&sid='+LR_sid+'&p='+escape(location.href)+lr_refer5238();}if(typeof(LR_UserSSL) != 'undefined' && LR_UserSSL && url.charAt(4)==':')url=url.substring(0,4)+'s'+url.substring(4,url.length);if(!data){if(typeof(LR_explain)!='undefined' && LR_explain!=''){url+='&e='+escape(escape(LR_explain));}else if(typeof(LiveAutoInvite1)!='undefined'){url+='&e='+escape(escape(LiveAutoInvite1));}}if(typeof(LR_ucd)!='undefined'){url+='&ucd='+escape(LR_ucd);}if(data)url+=data;url+='&d='+new Date().getTime();if(lr_url1=='fchatwin'){LR_ClientEnd=0;window.location=url+'&f=1';return;}var oWindow;try{if (LR_isMobile){if(LR_checkagent('sogoumse')){window.location=url;}else{oWindow=window.open(url);}}else if (LR_checkagent('opera|safari|se 2.x')){oWindow=window.open(url);}else{oWindow=window.open(url,'LRWIN_'+LR_websiteid, 'toolbar=no,width=630,height=435,resizable=yes,location=no,scrollbars=no,left='+((screen.width  - 630) / 4)+',top='+((screen.height - 435) / 4));}if(oWindow==null){LR_ClientEnd=0;window.location=url;return;}oWindow.focus();}catch(e){if(oWindow==null){LR_ClientEnd=0;window.location=url;}}
+                textacc();
+            }
+        }
+    }
+    var checking = window.setInterval(checkopen,200);
+
+</script>
+
+<!-- Google remarking -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1070015725;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1070015725/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+</body>
+</html>
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="../style/newAlbum2.css">
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/jquery-weui.min.css">
+    <link rel="stylesheet" href="../style/weui.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <title>Zenith Albums</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-558LWD9');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body ontouchstart>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-558LWD9"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!--<header>-->
+    <!--<div class="topCard">-->
+        <!--<div class="search"><i class="iconfont">&#xe60b;</i></div>-->
+        <!--<div class="logo"><img src="./西芝移动站视频、世邦移动端画册/zenith-logo.jpg" alt=""></div>-->
+        <!--<div class="menu"><i class="iconfont">&#xe653;</i></div>-->
+    <!--</div>-->
+    <!--<div class="daohang">-->
+        <!--<div class="LocationName">XXX</div>-->
+    <!--</div>-->
+<!--</header>-->
+    <header id="header" class="width-fill">
+        <div class="weui-flex">
+            <div class="weui-flex__item logo"><a href="/"><img src="../images/logo.jpg" alt="zenith crusher logo"></a></div>
+            <div class="menu-icon"><img src="../images/menu.jpg" alt="menu"></div>
+        </div>
+        <nav class="menu-nav hidden">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="../products/">Products</a></li>
+                <li><a href="../news/">News</a></li>
+                <li><a href="../cases/">Cases</a></li>
+                <li><a href="../service.html">Service</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="title-bar">
+        <div class="title-bar">
+            <div class="weui-flex">
+                <a class="title-forback" href="#" onclick="window.history.back(-1);return false;"><img src="../images/left-arrow.jpg"></a>
+                <div class="weui-flex__item">
+                    <div class="titlebar-sign">
+                        <select class="weui-select titlebar-select">
+                            <option selected="selected" value="millingVolume">Milling Volume</option>
+                            <option value="brokenVolume">Broken Volume</option>
+                            <option value="brokenAuxiliaryMachine">Broken Auxiliary Machine</option>
+                            <option value="millingBook">Milling Book</option>
+                            <option value="brokenBook">Broken Book</option>
+                            <option value="mineralProcessingBook">Mineral Processing Book</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="millingVolume">
+        <div class="albumCard">
+            <div class="album margin-r" id="1"><div class="albumImg"><img src="../images/albums/01磨粉分册/01.jpg" alt=""></div><span>LM Series</span><span>Grinding Mill</span></div>
+            <div class="album margin-r" id="2"><div class="albumImg"><img src="../images/albums/01磨粉分册/02.jpg" alt=""></div><span>LUM Series</span><span>Grinding Mill</span></div>
+            <div class="album" id="3"><div class="albumImg"><img src="../images/albums/01磨粉分册/03.jpg" alt=""></div><span>MB5X Series</span><span>Grinding Mill</span></div>
+            <div class="cutline"></div>
+            <div class="album margin-r" id="4"><div class="albumImg"><img src="../images/albums/01磨粉分册/04.jpg" alt=""></div><span>MTW Series</span><span>Grinding Mill</span></div>
+            <div class="album margin-r" id="5"><div class="albumImg"><img src="../images/albums/01磨粉分册/05.jpg" alt=""></div><span>MTM Series</span><span>Grinding Mill</span></div>
+
+        </div>
+    </section>
+    <section class="brokenVolume" style="display: none;">
+        <div class="albumCard">
+            <div class="album margin-r" id="6"><div class="albumImg"><img src="../images/albums/02破碎分册/01.jpg" alt=""></div><span>C6X Series</span><span>Jaw Crusher</span></div>
+            <div class="album margin-r" id="7"><div class="albumImg"><img src="../images/albums/02破碎分册/02.jpg" alt=""></div><span>CI5X Series</span><span>Impact Crusher</span></div>
+            <div class="album" id="8"><div class="albumImg"><img src="../images/albums/02破碎分册/03.jpg" alt=""></div><span>HPT Series</span><span>Cone Crusher</span></div>
+            <div class="cutline"></div>
+            <div class="album margin-r" id="9"><div class="albumImg"><img src="../images/albums/02破碎分册/04.jpg" alt=""></div><span>PEW Series</span><span>Jaw Crusher</span></div>
+            <div class="album margin-r" id="10"><div class="albumImg"><img src="../images/albums/02破碎分册/05.jpg" alt=""></div><span>HST Series</span><span>Cone Crusher</span></div>
+            <div class="album" id="11"><div class="albumImg"><img src="../images/albums/02破碎分册/06.jpg" alt=""></div><span>K Series</span><span>Crusher Plant</span></div>
+            <div class="cutline"></div>
+            <div class="album margin-r" id="12"><div class="albumImg"><img src="../images/albums/02破碎分册/07.jpg" alt=""></div><span>S Series</span><span>Cone Crusher</span></div>
+            <div class="album margin-r" id="13"><div class="albumImg"><img src="../images/albums/02破碎分册/08.jpg" alt=""></div><span>VSI6X Series</span><span>Impact Crusher</span></div>
+            <div class="album" id="14"><div class="albumImg"><img src="../images/albums/02破碎分册/09.jpg" alt=""></div><span>PFW</span><span>Impact Crusher</span></div>
+            <div class="cutline"></div>
+            <div class="album" id="15"><div class="albumImg"><img src="../images/albums/02破碎分册/10.jpg" alt=""></div><span>B Series</span><span>Impact Crusher</span></div>
+        </div>
+    </section>
+    <section class="brokenAuxiliaryMachine" style="display: none;">
+        <div class="albumCard">
+            <div class="album margin-r" id="16"><div class="albumImg"><img src="../images/albums/03破碎设备-辅机/01.jpg" alt=""></div><span>B6X Series</span><span>Belt Conveyor</span></div>
+            <div class="album margin-r" id="17"><div class="albumImg"><img src="../images/albums/03破碎设备-辅机/02.jpg" alt=""></div><span>S5X Series</span><span>Vibrating Screen</span></div>
+        </div>
+    </section>
+    <section class="millingBook" style="display: none;">
+        <div class="albumCard">
+            <div class="album margin-r" id="18"><div class="albumImg"><img src="../images/albums/04磨粉总册/01.jpg" alt=""></div><span>Grinding Equipment</span><span></span></div>
+
+        </div>
+    </section>
+    <section class="brokenBook" style="display: none;">
+        <div class="albumCard">
+            <div class="album margin-r" id="19"><div class="albumImg"><img src="../images/albums/05破碎总册/01.jpg" alt=""></div><span>Crushing Equipment</span><span></span></div>
+
+        </div>
+    </section>
+    <section class="mineralProcessingBook" style="display: none;">
+        <div class="albumCard">
+            <div class="album margin-r" id="20"><div class="albumImg"><img src="../images/albums/06选矿总册/01.jpg" alt=""></div><span>Beneficiation Equipment</span><span></span></div>
+
+        </div>
+    </section>
+    <!--<footer>-->
+    <!--<div class="copyright">Shanghai Zenit Company @2000-2017 Copyrights</div>-->
+    <!--</footer>-->
+    <footer id="footer" class="width-fill">
+        <div class="weui-footer">
+            <p class="weui-footer__text">Shanghai Zenith company &copy;2000-2018 Copyrights</p>
+        </div>
+    </footer>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/livechat.js"></script>
+    <script src="../js/newAblum.js"></script>
+</body>
+</html>

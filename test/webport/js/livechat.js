@@ -1,1 +1,0 @@
-document.writeln("<script language=\"javascript\" src=\"//mqg.zoosnet.net/JS/LsJS.aspx?siteid=MQG10186802&float=1&lng=en\"></script>");
