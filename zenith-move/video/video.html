@@ -7,8 +7,28 @@
     <link rel="stylesheet" href="../style/common.css">
     <link rel="stylesheet" href="../style/weui.min.css">
     <link rel="stylesheet" href="../style/jquery-weui.min.css">
+
     <script src="../js/jquery-3.2.1.min.js"></script>
-    <title>Title</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <title>Zenith Videos</title>
 </head>
 <body ontouchstart>
 <!-- Google Tag Manager (noscript) -->
@@ -47,18 +67,8 @@
         <div class="title-bar">
             <div class="weui-flex">
                 <a class="title-forback" href="#" onclick="window.history.back(-1);return false;"><img src="../images/left-arrow.jpg"></a>
-                <div class="weui-flex__item">
-                    <div class="titlebar-sign">
-                        <select class="weui-select titlebar-select">
-                            <option selected="selected" value="/products">Product</option>
-                            <option value="/products/crusher">Crusher</option>
-                            <option value="/products/grinding-mill">Grinding Mill</option>
-                            <option value="/products/feeder-screening">Feeder Screening</option>
-                            <option value="/products/mobile-crusher">Mobile Crusher</option>
-                            <option value="/products/vu-system">VU System</option>
-                            <option value="/products/others">Others</option>
-                        </select>
-                    </div>
+                <div class="weui-flex__item" style="padding-right: 10%;">
+                    <span>Viedo</span>
                 </div>
             </div>
         </div>
@@ -296,31 +306,61 @@
                 let player = polyvObject(plvObj).videoPlayer(plvConfig);
             </script>
             <div class="vedioDesc">
-                <span class="LW">&nbsp;&nbsp;&nbsp;&nbsp;ZENIT AD</span><span class="RW">share&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="LW">&nbsp;&nbsp;&nbsp;&nbsp;ZENIT AD</span>
+                <span class="RW -mob-share-open">share&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <div class="-mob-share-ui" style="display: none">
+                    <ul class="-mob-share-list">
+                        <li class="-mob-share-facebook"><p>Facebook</p></li>
+                        <li class="-mob-share-twitter"><p>Twitter</p></li>
+                        <li class="-mob-share-google"><p>Google+</p></li>
+                        <li class="-mob-share-linkedin"><p>Linkedin</p></li>
+                        <li class="-mob-share-tumblr"><p>Tumblr</p></li>
+                    </ul>
+                    <div class="-mob-share-close">取消</div>
+                </div>
+                <div class="-mob-share-ui-bg"></div>
+                <script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=27bad9ee056cc"></script>
+                <script>
+                    mobShare.config( {
+                     
+                        debug: true, // 开启调试，将在浏览器的控制台输出调试信息
+                     
+                        appkey: '27bad9ee056cc', // appkey
+                     
+                        params: {
+                            url: 'http://m.zenithcrusher.com/', 
+                        },
+
+                        callback: function( plat, params ) {
+                        }
+                     
+                    } );
+                     
+                </script>
             </div>
         </div>
         <div class="cut"></div>
         <div class="vedioList">
-            <div class="RTY">Recommend To You</div>
+            <div class="RTY">Recommend Video</div>
             <div class="vedioRow">
                 <a href="./video.html?vid=228d7015db658b1d92bd988ef3703710_2" class="vedioCard">
                     <img src="../images/移动端/01公司宣传/03MG动画-磨粉产品介绍.jpg" class="ved">
                     <i></i>
-                    <div class="deti">磨粉产品介绍</div>
+                    <div class="deti">Grinding Mills</div>
                 </a>
                 <a href="./video.html?vid=228d7015dbff01bee6683c94c6486b24_2" class="vedioCard">
                     <img src="../images/移动端/01公司宣传/04MG动画-破碎产品介绍.jpg" class="ved">
-                    <div class="deti">破碎产品介绍</div>
+                    <div class="deti">Crushers</div>
                 </a>
             </div>
             <div class="vedioRow">
                 <a href="./video.html?vid=228d7015dbd477a49930dc0e53729981_2" class="vedioCard">
                     <img src="../images/移动端/01公司宣传/09雷霆模式产品篇.jpg" class="ved">
-                    <div class="deti">雷霆模式产品篇</div>
+                    <div class="deti">Products of Lightning Mode</div>
                 </a>
                 <a href="./video.html?vid=228d7015db79cf7e7d6f16869d7e40e6_2" class="vedioCard">
                     <img src="../images/移动端/01公司宣传/10雷霆模式宣传篇.jpg" class="ved">
-                    <div class="deti">雷霆模式宣传篇</div>
+                    <div class="deti">The Lightning Mode</div>
                 </a>
             </div>
             <div class="more">
@@ -336,25 +376,6 @@
             <p class="weui-footer__text">Shanghai Zenith company &copy;2000-2018 Copyrights</p>
         </div>
     </footer>
-    <script>
-        (function (doc, win) {
-            var docEl = doc.documentElement,
-                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-                recalc = function () {
-                    var clientWidth = docEl.clientWidth;
-                    if (!clientWidth) return;
-                    if(clientWidth>=640){
-                        docEl.style.fontSize = '100px';
-                    }else{
-                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
-                    }
-                };
-
-            if (!doc.addEventListener) return;
-            win.addEventListener(resizeEvt, recalc, false);
-            doc.addEventListener('DOMContentLoaded', recalc, false);
-        })(document, window);
-    </script>
     <script src="../js/jquery-weui.min.js"></script>
     <script src="../js/swiper.min.js"></script>
     <script src="../js/livechat.js"></script>
